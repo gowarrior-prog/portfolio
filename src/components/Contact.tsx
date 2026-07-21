@@ -36,7 +36,7 @@ export default function Contact() {
           {/* Email Text */}
           <div className="flex items-center gap-3 text-base font-medium text-slate-700 dark:text-slate-300 select-text">
             <Mail size={20} className="text-emerald-500" /> 
-            <span>subhandeveloper@gmail.com</span>
+            <span>subhandeveloper74@gmail.com</span>
           </div>
 
           {/* Phone Text */}
