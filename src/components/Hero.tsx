@@ -39,13 +39,6 @@ export default function Hero() {
         animate="visible"
         className="max-w-3xl space-y-6 z-10"
       >
-        {/* Intro Badge */}
-        <motion.span 
-          variants={itemVariants}
-          className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 dark:bg-emerald-500/5 rounded-full border border-emerald-500/20"
-        >
-          AVAILABLE FOR FREELANCE & FULL-TIME ROLES
-        </motion.span>
 
         {/* Main Title */}
         <motion.h1 
