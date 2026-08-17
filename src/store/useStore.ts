@@ -8,7 +8,7 @@ interface PortfolioState {
 }
 
 export const useStore = create<PortfolioState>((set) => ({
-  isDarkMode: true, // Default dark theme premium lagti hai
+  isDarkMode: false, // Default light theme - white background matching logo
   toggleDarkMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
   activeSection: 'home',
   setActiveSection: (section) => set({ activeSection: section }),

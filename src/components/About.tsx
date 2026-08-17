@@ -20,50 +20,50 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="w-full min-h-screen py-24 px-6 max-w-6xl mx-auto relative flex flex-col justify-center">
+    <section id="about" className="w-full py-24 px-6 max-w-6xl mx-auto bg-white">
       {/* Background Subtle Glow */}
-      <div className="absolute inset-0 -z-10 flex items-center justify-center overflow-hidden pointer-events-none">
-        <div className="h-[400px] w-[400px] rounded-full bg-emerald-500/10 blur-[120px] dark:bg-emerald-500/5" />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
+        <div className="h-[400px] w-[400px] rounded-full bg-blue-500/5 blur-[120px]" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-        {/* Left Column: Refined English Bio */}
+        {/* Left Column: Bio */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
           className="lg:col-span-1 space-y-6"
         >
           <div>
-            <span className="text-xs font-semibold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">
+            <span className="text-xs font-semibold tracking-widest text-blue-600 uppercase">
               Get to know me
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white mt-1">
+            <h2 className="text-[2.5rem] leading-tight font-bold text-[#2d3748] mt-1">
               About{' '}
-              <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
+              <span className="text-blue-600">
                 Me
               </span>
             </h2>
           </div>
 
-          <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+          <p className="text-gray-600 text-[15px] leading-relaxed">
             I am a Full Stack Developer specializing in crafting high-performance, responsive web applications and scalable backend systems.
           </p>
 
-          <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+          <p className="text-gray-600 text-[15px] leading-relaxed">
             My passion lies in writing clean, maintainable architecture, managing seamless database workflows, and deploying intelligent multi-agent automations that solve real-world problems.
           </p>
 
           {/* Quick Highlight Stats */}
-          <div className="pt-2 grid grid-cols-2 gap-4 border-t border-slate-200 dark:border-slate-800/80">
+          <div className="pt-4 grid grid-cols-2 gap-4 border-t border-gray-100">
             <div>
-              <span className="block text-2xl font-bold text-slate-900 dark:text-white">Full Stack</span>
-              <span className="text-xs text-slate-500 dark:text-slate-400">Next.js & Python</span>
+              <span className="block text-xl font-bold text-[#2d3748]">Full Stack</span>
+              <span className="text-xs font-medium text-gray-500">Next.js & Python</span>
             </div>
             <div>
-              <span className="block text-2xl font-bold text-slate-900 dark:text-white">AI Driven</span>
-              <span className="text-xs text-slate-500 dark:text-slate-400">Autonomous Agents</span>
+              <span className="block text-xl font-bold text-[#2d3748]">AI Driven</span>
+              <span className="text-xs font-medium text-gray-500">Autonomous Agents</span>
             </div>
           </div>
         </motion.div>
@@ -75,14 +75,14 @@ export default function About() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className={`p-6 rounded-2xl bg-white dark:bg-slate-900/40 border border-slate-200/60 dark:border-slate-800/50 shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/20 ${
+              className={`p-6 rounded-2xl bg-white border border-gray-200 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/5 hover:border-blue-200 ${
                 index === 0 ? 'sm:col-span-2' : ''
               }`}
             >
-              <h3 className="text-sm font-semibold tracking-wider uppercase text-emerald-600 dark:text-emerald-400 mb-4 flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              <h3 className="text-sm font-bold tracking-wider uppercase text-blue-600 mb-4 flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-2.5">
@@ -91,7 +91,7 @@ export default function About() {
                     key={i}
                     whileHover={{ scale: 1.05, y: -2 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className="text-sm font-medium px-3.5 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 border border-slate-200/60 dark:border-slate-800/80 shadow-sm cursor-default transition-colors hover:border-emerald-500/40 dark:hover:border-emerald-500/40 hover:text-emerald-600 dark:hover:text-emerald-400"
+                    className="text-[13px] font-semibold px-3 py-1.5 rounded-md bg-[#1e293b] text-white cursor-default shadow-sm transition-colors hover:bg-blue-600"
                   >
                     {skill}
                   </motion.span>

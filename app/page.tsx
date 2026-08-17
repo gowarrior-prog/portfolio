@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Navbar />
       
-      <div className="relative min-h-screen pt-16 selection:bg-emerald-500/30">
+      <div className="relative min-h-screen pt-16 selection:bg-blue-500/30">
         <Hero />
         <Projects /> 
          <About />
