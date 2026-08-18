@@ -55,19 +55,23 @@ export default function Navbar() {
   }, [setActiveSection]);
 
   const handleNavClick = (id: string) => {
-    setActiveSection(id);
+    // Pehle menu band karo
     setIsMobileMenuOpen(false);
+    setActiveSection(id);
 
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 90;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    // Thoda delay deke scroll karo (mobile pe animation ke baad)
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 90;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
 
-      window.scrollTo({
-        top: elementPosition - offset,
-        behavior: 'smooth',
-      });
-    }
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: 'smooth',
+        });
+      }
+    }, 100); // 100ms delay mobile ke liye important hai
   };
 
   return (
@@ -148,15 +152,15 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" as const }}
+            transition={{ duration: 0.25, ease: "easeInOut" as const }}
             className="md:hidden border-t border-gray-100 bg-white overflow-hidden"
           >
-            <div className="flex flex-col py-4 px-6 gap-2">
+            <div className="flex flex-col py-4 px-6 gap-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`text-left text-lg font-medium transition-colors duration-200 py-3 px-2 rounded-lg
+                  className={`text-left text-lg font-medium transition-colors duration-200 py-3 px-3 rounded-lg
                     ${
                       activeSection === item.id
                         ? 'text-blue-600 bg-blue-50'
