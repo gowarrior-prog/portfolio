@@ -25,6 +25,19 @@ export default function Hero() {
     }
   };
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 90; // navbar height
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section 
       id="home" 
@@ -64,18 +77,19 @@ export default function Hero() {
 
         {/* Action Buttons */}
         <motion.div variants={item} className="pt-4 flex flex-wrap justify-center gap-4">
-          <a
-            href="#projects"
+          <button
+            onClick={() => scrollToSection('projects')}
             className="px-8 py-3.5 rounded bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors duration-200"
           >
             View My Projects
-          </a>
-          <a
-            href="#contact"
+          </button>
+          
+          <button
+            onClick={() => scrollToSection('contact')}
             className="px-8 py-3.5 rounded border border-[#2d3748] text-[#2d3748] font-medium hover:bg-gray-50 transition-colors duration-200"
           >
             Get In Touch
-          </a>
+          </button>
         </motion.div>
       </motion.div>
     </section>
